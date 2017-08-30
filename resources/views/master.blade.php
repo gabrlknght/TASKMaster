@@ -18,14 +18,14 @@
 
       <header>
         <div class="container">
-          <div id="main-nav" class="pull-right" style="margin-top: 20px;">
+          <div id="main-nav" class="well well-sm pull-right"><p class="text-info text-center"><strong>MENU</strong></p>
             <?php if (\Request::is('crud')) { ?> <!-- Auto-hides 'Create New' on all pages except front -->
-              <a href="{{action('CRUDController@create')}}" class="btn btn-lg btn-primary" style="margin-right: 0.5em;" title="Create New">&#10133;<span class="hidden-xs">&nbsp;&nbsp;Create New</span></a>
+              <a href="{{action('CRUDController@create')}}" class="btn btn-md btn-primary" style="margin-right: 0.5em;" title="Create New">&#10133;<span class="hidden-xs">&nbsp;&nbsp;Create New</span></a>
             <?php } ?>
-              <a href="{{action('CRUDController@index')}}" class="btn btn-lg btn-info pull-right" title="View All">&#128065;<span class="hidden-xs">&nbsp;&nbsp;View All</span></a>
+              <a href="{{action('CRUDController@index')}}" class="btn btn-md btn-info pull-right" title="View All">&#128065;<span class="hidden-xs">&nbsp;&nbsp;View All</span></a>
           </div>
-          <h1>&#9997; TASKMaster</h1>
-          <p>A create,read,update,delete utility app!</p>
+          <h1><a href="/crud" style="text-decoration: none;" title="Back to TASKMaster Index">&#9997; TASKMaster</a></h1>
+          <p class="text-secondary">A create,read,update,delete utility app!</p>
         </div>
       </header>
 
