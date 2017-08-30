@@ -25,7 +25,7 @@
               <a href="{{action('CRUDController@index')}}" class="btn btn-md btn-info pull-right" title="View All">&#128065;<span class="hidden-xs">&nbsp;&nbsp;View All</span></a>
           </div>
           <h1><a href="/crud" style="text-decoration: none;" title="Back to TASKMaster Index">&#9997; TASKMaster</a></h1>
-          <p class="text-secondary">A create,read,update,delete utility app!</p>
+          <p class="text-secondary">Actually, it's just a really CRUDdy app!</p>
         </div>
       </header>
 
