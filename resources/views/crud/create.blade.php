@@ -1,10 +1,10 @@
 <!-- create.blade.php -->
 
 @extends('master')
-
 @section('content')
 
 <div class="container">
+  @if(Auth::check())
   <form method="post" action="{{url('crud')}}">
     <div class="form-group row">
       {{csrf_field()}}
@@ -22,9 +22,13 @@
     <div class="form-group row">
       <div class="col-sm-6"><button type="submit" class="btn btn-primary btn-block">&#10133;&nbsp;&nbsp;Create</button></div>
       <div class="col-sm-6"><button type="reset" onclick="javascript:document.forms[0].reset();" class="btn btn-default btn-block">&#9100; Reset Form</button></div>
-      <!-- <input type="submit" class="btn btn-primary btn-block"> -->
     </div>
   </form>
+  @endif
+
+  @if(Auth::guest())
+    <a href="/login" class="btn btn-info">Login to see this content.</a>
+  @endif
 </div>
 
 @endsection

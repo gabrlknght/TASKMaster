@@ -41,13 +41,6 @@ class CRUDController extends Controller
           'post' => $request->get('post')
         ]);
         $crud->save();
-        if (Crud::find($request->all())) {
-           $request->session()->flash('message.level', 'success');
-           $request->session()->flash('message.content', 'Post was successfully added!');
-        } else {
-           $request->session()->flash('message.level', 'danger');
-           $request->session()->flash('message.content', 'There was an error adding the post!');
-        }
         return redirect('/crud');
     }
 
@@ -87,13 +80,6 @@ class CRUDController extends Controller
       $crud->title = $request->get('title');
       $crud->post = $request->get('post');
       $crud->save();
-      if (Crud::find($id)) {
-         $request->session()->flash('message.level', 'success');
-         $request->session()->flash('message.content', 'Post was successfully updated!');
-      } else {
-         $request->session()->flash('message.level', 'danger');
-         $request->session()->flash('message.content', 'There was an error adding the post!');
-      }
       return redirect('/crud');
     }
 

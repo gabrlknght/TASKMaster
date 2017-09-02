@@ -3,16 +3,6 @@
 @extends('master')
 @section('content')
 
-  <!-- Flash Notification -->
-  @if(session()->has('message.level'))
-      <div class="alert alert-dismissable alert-{{ session('message.level') }} container">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        {!! session('message.content') !!}
-      </div>
-  @endif
-
   <div class="container">
     <table class="table table-striped table-bordered" style="-webkit-box-shadow: 0px 0px 3px 3px rgba(220,220,220,0.5);
 -moz-box-shadow: 0px 0px 3px 3px rgba(220,220,220,0.5);

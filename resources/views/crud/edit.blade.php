@@ -2,7 +2,10 @@
 
 @extends('master')
 @section('content')
+
 <div class="container">
+
+  @if(Auth::check())
   <form method="post" action="{{action('CRUDController@update', $id)}}">
     <div class="form-group row">
       {{csrf_field()}}
@@ -23,5 +26,11 @@
       <div class="col-sm-6"><button type="reset" onclick="javascript:document.forms[0].reset();" class="btn btn-default btn-block">&#9100; Undo Edits</button></div>
     </div>
   </form>
+  @endif
+
+  @if(Auth::guest())
+    <a href="/login" class="btn btn-info">Login to see this content.</a>
+  @endif
 </div>
+
 @endsection
