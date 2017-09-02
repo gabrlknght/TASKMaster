@@ -74,6 +74,11 @@
         @yield('content')
     </div>
 
+    <footer class="container">
+      <hr/>
+      <p class="text-center">&copy; <?= date('Y') ?> Avik Nandy &middot; All Rights Reserved</p>
+    </footer>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

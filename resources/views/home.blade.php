@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in! <a href="/crud" title="TASKMaster Main Page" class="btn btn-default"><strong>Back to Main »</strong></a>
                 </div>
             </div>
         </div>
