@@ -12,6 +12,7 @@
 */
 
 Route::get('/', function () {
+    flash('Welcome to the TASKMaster!')->success();
     return redirect('/crud');
 });
 

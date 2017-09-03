@@ -42,9 +42,17 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        @if (Auth::guest())
+                        @guest
+                            <?php if (\Request::is('login')) { ?> <!-- Auto-hides 'Register' menu item on login page -->
+                              <li><a href="{{ route('register') }}">Register</a></li>
+                            <?php } ?>
+                            <?php if (\Request::is('register')) { ?> <!-- Auto-hides 'Login' menu item on register page -->
                             <li><a href="{{ route('login') }}">Login</a></li>
+                            <?php } ?>
+                            <?php if ((\Request::is('crud')) || (\Request::is('crud/create'))) { ?> <!-- Shows 'Login / Register' menu items on index and create pages when not logged in -->
                             <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <?php } ?>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -65,21 +73,36 @@
                                     </li>
                                 </ul>
                             </li>
-                        @endif
+                        @endguest
                     </ul>
                 </div>
             </div>
         </nav>
+
+       <!-- Application header -->
+        <header>
+          <div class="container">
+            <div id="main-nav" class="well well-sm pull-right"><p class="text-info text-center"><strong>MENU</strong></p>
+              <?php if (\Request::is('crud')) { ?> <!-- Auto-hides 'Create New' on all pages except front -->
+                <a href="{{action('CRUDController@create')}}" class="btn btn-md btn-primary" style="margin-right: 0.5em;" title="Create New">&#10133;<span class="hidden-xs">&nbsp;&nbsp;Create New</span></a>
+              <?php } ?>
+                <a href="{{action('CRUDController@index')}}" class="btn btn-md btn-info pull-right" title="View All">&#128065;<span class="hidden-xs">&nbsp;&nbsp;View All</span></a>
+            </div>
+            <h1><a href="/crud" style="text-decoration: none;" title="Back to TASKMaster Index">&#9997; TASKMaster</a></h1>
+            <p class="text-secondary">Actually, it's just a really CRUDdy app!</p>
+          </div>
+        </header>
 
         @yield('content')
     </div>
 
     <footer class="container">
       <hr/>
-      <p class="text-center">&copy; <?= date('Y') ?> Avik Nandy &middot; All Rights Reserved</p>
+      <p class="text-info text-center">&copy; <?= date('Y') ?> Avik Nandy &middot; All Rights Reserved</p>
     </footer>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>$('div.alert').not('.alert-important').delay(3000).fadeOut(350);</script>
 </body>
 </html>
