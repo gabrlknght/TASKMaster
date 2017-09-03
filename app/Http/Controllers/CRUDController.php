@@ -42,7 +42,7 @@ class CRUDController extends Controller
           'post' => $request->get('post')
         ]);
         $crud->save();
-        flash('Record has been created succesfully!')->success();
+        flash('Record has been created successfully!')->success();
         return redirect('/crud');
     }
 
@@ -66,7 +66,7 @@ class CRUDController extends Controller
     public function edit($id)
     {
       $crud = Crud::find($id);
-      flash('Edit record below.')->info();
+      flash('Edit record below.')->warning();
       return view('crud.edit', compact('crud','id'));
     }
 
@@ -83,7 +83,7 @@ class CRUDController extends Controller
       $crud->title = $request->get('title');
       $crud->post = $request->get('post');
       $crud->save();
-      flash('Record has been succesfully updated!')->success();
+      flash('Record has been successfully updated!')->success();
       return redirect('/crud');
     }
 
@@ -97,7 +97,7 @@ class CRUDController extends Controller
     {
       $crud = Crud::find($id);
       $crud->delete();
-      flash('Record has been succesfully deleted!')->error();
+      flash('Record has been successfully deleted!')->error();
       return redirect('/crud');
     }
 }
