@@ -1,3 +1,9 @@
+## &#9997; TASKMaster
+
+TASKMaster is my first Laravel-based online tool. In an attempt to expand my understanding of Laravel's functionality and ease of use, I'm focusing on building and adding new features to this project over time as my knowledge of Laravel improves. If you're interested in helping out and/or contributing - drop me a message; let me know!
+
+<hr />
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
